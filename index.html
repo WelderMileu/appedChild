@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html leng='pt-br'>
+	<head>
+		<meta charset="utf-8">
+		<title>appendChild</title>
+		<!-- cdn bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<!-- cdn font-awesome -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<div class="container mt-3 jumbotron"><!-- div father -->
+			<div class="col-sm-10">
+				<!-- Campo responsavel por mandar a informação para a funcão,text nao funcional -->
+				<label>Campo appendChild()</label>
+				<input type="text" id="write" name="" class="form-control" placeholder="Digite Algo">
+				<button onclick='inserir()' class="btn btn-outline-dark mt-3"><i class="fa fa-folder-open"></i> Enviar</button><!-- btn que ira executar  a funçao -->
+			</div>
+		</div>
+		<!-- div que ira exibir o conteudo -->
+		<div id="campo" class="mt-3 container"></div>
+		<script type="text/javascript">
+			const body = document.querySelector('body');// Stilo do corpo da pagina
+			body.style.background ="rgba(0,0,0,.2)";
+			
+			function inserir(){ // Função responsavel por executar a operação
+				let p     = document.createElement("p"); // Criando o elemento <p></p>
+				let write = document.createTextNode("write"); // Criando o texto que vai exibir
+				
+				p.appendChild(write); // Inserindo o texto na tag usando appendChild()
+				document.getElementById('campo').appendChild(p); // Inserindo a tag p na nossa div campo
+			}
+		</script>
+	</body>
+</html>
